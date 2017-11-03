@@ -9,8 +9,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 
 
-class ColorsAdapter : RecyclerView.Adapter<ColorsAdapter.ViewHolder>() {
+class ColorsAdapter(var colors : List<Color>) : RecyclerView.Adapter<ColorsAdapter.ViewHolder>() {
 
+    init {
+        setHasStableIds(true)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
@@ -18,13 +21,17 @@ class ColorsAdapter : RecyclerView.Adapter<ColorsAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val color = ContextCompat.getColor(holder.itemView.context, R.color.colorAccent)
-        holder.cardView.setCardBackgroundColor(color)
-        holder.numberTextView.setText(""+position);
+        var color = colors[position]
+        holder.cardView.setCardBackgroundColor(color.value)
+        holder.numberTextView.setText(""+position)
     }
 
     override fun getItemCount(): Int {
         return 20
+    }
+
+    override fun getItemId(position: Int): Long {
+        return colors[position].id
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
