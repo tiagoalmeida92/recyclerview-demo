@@ -1,6 +1,5 @@
 package com.talmeida.recyclerviewdemo
 
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -27,11 +26,11 @@ class ColorsAdapter(var colors : List<Color>) : RecyclerView.Adapter<ColorsAdapt
     }
 
     override fun getItemCount(): Int {
-        return 20
+        return colors.size
     }
 
     override fun getItemId(position: Int): Long {
-        return colors[position].id
+        return colors[position].id.toLong()
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

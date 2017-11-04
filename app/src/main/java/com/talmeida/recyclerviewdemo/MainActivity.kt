@@ -2,38 +2,40 @@ package com.talmeida.recyclerviewdemo
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    val LIST_SIZE : Int = 20
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        requestedOrientation = resources.getInteger(R.integer.orientation)
         initializeRecyclerView();
     }
 
     private fun initializeRecyclerView() {
-        recyclerView.layoutManager = LinearLayoutManager(this);
 
+        val isTablet = resources.getBoolean(R.bool.isTablet);
+        if (isTablet) {
+            recyclerView.layoutManager = GridLayoutManager(this, 3)
+        } else {
+            recyclerView.layoutManager = LinearLayoutManager(this);
+        }
 
         var colors = getColors();
         recyclerView.adapter = ColorsAdapter(colors);
     }
 
-    private fun getColors(): MutableList<Color> {
+    private fun getColors(): List<Color> {
         val colors = resources.obtainTypedArray(R.array.material_colors)
-        var colorsResult = mutableListOf<Color>()
 
-        var id: Long = 0
-        for(i : Int in 1..LIST_SIZE){
-            val index = (Math.random() * colors.length()).toInt()
-            val color = colors.getColor(index, android.graphics.Color.BLACK)
-            colorsResult.add(Color(id++, color))
-        }
-        colors.recycle()
-        return colorsResult
+        return (0 until colors.length())
+                .map { idx ->
+                    val color = colors.getColor(idx, 0)
+                    Color(idx, color)
+                }
+
     }
 }

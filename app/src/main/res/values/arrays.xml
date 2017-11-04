@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
     <array name="material_colors">
+        <item type="color">#f57c00</item>
+        <item type="color">#0a8f08</item>
+        <item type="color">#039be5</item>
+        <item type="color">#0288d1</item>
+        <item type="color">#a1887f</item>
+        <item type="color">#78909c</item>
+        <item type="color">#e84e40</item>
+        <item type="color">#9c27b0</item>
+        <item type="color">#e51c23</item>
+        <item type="color">#8c9eff</item>
+        <item type="color">#536dfe</item>
+    </array>
+
+    <array name="all_material_colors">
         <item name="red_50" type="color">#fde0dc</item>
         <item name="red_100" type="color">#f9bdbb</item>
         <item name="red_200" type="color">#f69988</item>

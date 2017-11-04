@@ -1,3 +1,3 @@
 package com.talmeida.recyclerviewdemo
 
-data class Color (val id: Long, val value : Int)
+data class Color (val id: Int, val value: Int)
