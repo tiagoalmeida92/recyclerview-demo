@@ -22,7 +22,7 @@ class ColorsAdapter(var colors : List<Color>) : RecyclerView.Adapter<ColorsAdapt
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var color = colors[position]
         holder.cardView.setCardBackgroundColor(color.value)
-        holder.numberTextView.setText(""+position)
+        holder.numberTextView.text = ""+color.id
     }
 
     override fun getItemCount(): Int {

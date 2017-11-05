@@ -7,13 +7,14 @@
         <item type="color">#0a8f08</item>
         <item type="color">#039be5</item>
         <item type="color">#0288d1</item>
-        <item type="color">#a1887f</item>
-        <item type="color">#78909c</item>
         <item type="color">#e84e40</item>
+        <item type="color">#78909c</item>
+        <item type="color">#8c9eff</item>
+        <item type="color">#4dd0e1</item>
+        <item type="color">#536dfe</item>
         <item type="color">#9c27b0</item>
         <item type="color">#e51c23</item>
-        <item type="color">#8c9eff</item>
-        <item type="color">#536dfe</item>
+
     </array>
 
     <array name="all_material_colors">
