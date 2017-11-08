@@ -11,7 +11,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var colorList : List<Color>
+    lateinit var gotCharactersList : List<GotCharacter>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,26 +24,17 @@ class MainActivity : AppCompatActivity() {
 
         val isTablet = resources.getBoolean(R.bool.isTablet);
         if (isTablet) {
-            recyclerView.layoutManager = GridLayoutManager(this, 4)
+            recyclerView.layoutManager = GridLayoutManager(this, 3)
         } else {
 //            recyclerView.layoutManager = LinearLayoutManager(this);
             recyclerView.layoutManager = GridLayoutManager(this, 2)
         }
 
-        colorList = getColors();
-        recyclerView.adapter = ColorsAdapter(colorList);
+        gotCharactersList = getGotCharacters();
+        recyclerView.adapter = GotCharactersAdapter(gotCharactersList);
     }
 
-    private fun getColors(): List<Color> {
-        val colors = resources.obtainTypedArray(R.array.material_colors)
 
-        return (0 until colors.length())
-                .map { idx ->
-                    val color = colors.getColor(idx, 0)
-                    Color(idx, color)
-                }
-
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main, menu)
@@ -61,7 +52,35 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun shuffle() {
-        Collections.shuffle(colorList);
+        Collections.shuffle(gotCharactersList);
         recyclerView.adapter.notifyDataSetChanged()
     }
+
+    private fun getGotCharacters(): List<GotCharacter> {
+        var list = mutableListOf<GotCharacter>()
+        list.add(GotCharacter("Daenerys Targaryen", R.drawable.danny))
+        list.add(GotCharacter("John Snow", R.drawable.snow))
+        list.add(GotCharacter("Joffrey Baratheon", R.drawable.joffrey))
+        list.add(GotCharacter("Arya Stark", R.drawable.arya))
+        list.add(GotCharacter("Sir Bronn", R.drawable.bronn))
+        list.add(GotCharacter("Cersei Lannister", R.drawable.cersei))
+        list.add(GotCharacter("Ed Stark", R.drawable.ed))
+        list.add(GotCharacter("Gendry", R.drawable.gendry))
+        list.add(GotCharacter("The Mountain", R.drawable.gregor))
+        list.add(GotCharacter("Sansa Stark", R.drawable.sansa))
+        list.add(GotCharacter("Tyrion Lannister", R.drawable.tyrion))
+
+
+        return list
+
+//        val colors = resources.obtainTypedArray(R.array.material_colors)
+//
+//        return (0 until colors.length())
+//                .map { idx ->
+//                    val color = colors.getColor(idx, 0)
+//                    GotCharacter(idx, color)
+//                }
+
+    }
+
 }
