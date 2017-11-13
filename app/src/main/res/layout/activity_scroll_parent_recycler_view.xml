@@ -6,20 +6,32 @@
     android:layout_height="match_parent"
     tools:context="com.talmeida.recyclerviewdemo.nested.ScrollParentRecyclerViewActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <TextView
+            android:id="@+id/textview"
+            android:layout_below="@id/recyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This way you can have other views below the RecyclerView"
+            android:textSize="26sp"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Action"
+            android:layout_below="@+id/textview"
+            android:layout_centerHorizontal="true"/>
 
-
-
-    </LinearLayout>
+    </RelativeLayout>
 
 
 </ScrollView>

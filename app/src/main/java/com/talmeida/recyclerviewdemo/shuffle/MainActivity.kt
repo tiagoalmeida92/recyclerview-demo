@@ -6,6 +6,7 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import com.talmeida.recyclerviewdemo.R
+import com.talmeida.recyclerviewdemo.getGotCharacters
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -56,31 +57,5 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter.notifyDataSetChanged()
     }
 
-    private fun getGotCharacters(): List<GotCharacter> {
-        var list = mutableListOf<GotCharacter>()
-        list.add(GotCharacter("Daenerys Targaryen", R.drawable.danny))
-        list.add(GotCharacter("John Snow", R.drawable.snow))
-        list.add(GotCharacter("Joffrey Baratheon", R.drawable.joffrey))
-        list.add(GotCharacter("Arya Stark", R.drawable.arya))
-        list.add(GotCharacter("Sir Bronn", R.drawable.bronn))
-        list.add(GotCharacter("Cersei Lannister", R.drawable.cersei))
-        list.add(GotCharacter("Ed Stark", R.drawable.ed))
-        list.add(GotCharacter("Gendry", R.drawable.gendry))
-        list.add(GotCharacter("The Mountain", R.drawable.gregor))
-        list.add(GotCharacter("Sansa Stark", R.drawable.sansa))
-        list.add(GotCharacter("Tyrion Lannister", R.drawable.tyrion))
-
-
-        return list
-
-//        val colors = resources.obtainTypedArray(R.array.material_colors)
-//
-//        return (0 until colors.length())
-//                .map { idx ->
-//                    val color = colors.getColor(idx, 0)
-//                    GotCharacter(idx, color)
-//                }
-
-    }
 
 }
