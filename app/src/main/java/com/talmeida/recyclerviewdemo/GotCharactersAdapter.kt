@@ -1,31 +1,33 @@
-package com.talmeida.recyclerviewdemo.shuffle
+package com.talmeida.recyclerviewdemo
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.talmeida.recyclerviewdemo.R
+import com.talmeida.recyclerviewdemo.shuffle.GotCharacter
 
 
-class GotCharactersAdapter(var characters : List<GotCharacter>) : RecyclerView.Adapter<GotCharactersAdapter.ViewHolder>() {
+class GotCharactersAdapter(var characters: List<GotCharacter>) : RecyclerView.Adapter<GotCharactersAdapter.ViewHolder>() {
+
+    val TAG: String = "GotCharactersAdapter"
 
     init {
         setHasStableIds(true)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        Log.d(TAG, "onCreateViewHolder")
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        Log.d(TAG, "onBindViewHolder Pos: " + position)
         var character = characters[position]
-        holder.image.setImageResource(character.imageId)
-        holder.name.text = character.name
-        //holder.cardView.setCardBackgroundColor(color.value)
-        //holder.numberTextView.text = ""+color.id
+        holder.bindTo(character)
     }
 
     override fun getItemCount(): Int {
@@ -38,12 +40,13 @@ class GotCharactersAdapter(var characters : List<GotCharacter>) : RecyclerView.A
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        var image: ImageView
-        var name: TextView
+        var image: ImageView = itemView.findViewById(R.id.image)
+        var name: TextView = itemView.findViewById(R.id.characterName)
 
-        init {
-            image = itemView.findViewById(R.id.image)
-            name = itemView.findViewById(R.id.characterName)
+        fun bindTo(character: GotCharacter) {
+            image.setImageResource(character.imageId)
+            name.text = character.name
         }
+
     }
 }

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import com.talmeida.recyclerviewdemo.R
 import com.talmeida.recyclerviewdemo.getGotCharacters
-import com.talmeida.recyclerviewdemo.shuffle.GotCharactersAdapter
+import com.talmeida.recyclerviewdemo.GotCharactersAdapter
 import kotlinx.android.synthetic.main.activity_scroll_parent_recycler_view.*
 
 class ScrollParentRecyclerViewActivity : AppCompatActivity() {

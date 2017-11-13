@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import com.talmeida.recyclerviewdemo.GotCharactersAdapter
 import com.talmeida.recyclerviewdemo.R
 import com.talmeida.recyclerviewdemo.getGotCharacters
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeRecyclerView() {
 
+        recyclerView.setHasFixedSize(true)
         val isTablet = resources.getBoolean(R.bool.isTablet);
         if (isTablet) {
             recyclerView.layoutManager = GridLayoutManager(this, 3)
