@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RecyclerViewDemo.iml" filepath="$PROJECT_DIR$/RecyclerViewDemo.iml" />
       <module fileurl="file://C:\Users\Tiago\Documents\projects\recyclerview-demo\RecyclerViewDemo.iml" filepath="C:\Users\Tiago\Documents\projects\recyclerview-demo\RecyclerViewDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclerview-demo.iml" filepath="$PROJECT_DIR$/recyclerview-demo.iml" />
       <module fileurl="file://C:\AndroidProjects\RecyclerViewDemo\recyclerview-demo.iml" filepath="C:\AndroidProjects\RecyclerViewDemo\recyclerview-demo.iml" />
     </modules>
   </component>

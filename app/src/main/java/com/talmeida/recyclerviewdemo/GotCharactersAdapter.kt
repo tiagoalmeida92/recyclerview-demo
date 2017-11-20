@@ -15,7 +15,7 @@ class GotCharactersAdapter(var characters: List<GotCharacter>) : RecyclerView.Ad
     val TAG: String = "GotCharactersAdapter"
 
     init {
-        setHasStableIds(true)
+//        setHasStableIds(true)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,9 +34,9 @@ class GotCharactersAdapter(var characters: List<GotCharacter>) : RecyclerView.Ad
         return characters.size
     }
 
-    override fun getItemId(position: Int): Long {
-        return characters[position].imageId.toLong()
-    }
+//    override fun getItemId(position: Int): Long {
+//        return characters[position].imageId.toLong()
+//    }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

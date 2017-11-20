@@ -17,7 +17,7 @@ class ScrollParentRecyclerViewActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = GridLayoutManager(this, 2)
         recyclerView.layoutManager.isAutoMeasureEnabled = true
-        recyclerView.adapter = GotCharactersAdapter(getGotCharacters())
+        recyclerView.adapter = GotCharactersAdapter(getGotCharacters().takeLast(4))
 
     }
 }

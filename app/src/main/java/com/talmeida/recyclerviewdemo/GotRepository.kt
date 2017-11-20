@@ -12,11 +12,10 @@ fun getGotCharacters(): List<GotCharacter> {
     list.add(GotCharacter("Sir Bronn", R.drawable.bronn))
     list.add(GotCharacter("Cersei Lannister", R.drawable.cersei))
     list.add(GotCharacter("Ed Stark", R.drawable.ed))
-    list.add(GotCharacter("Gendry", R.drawable.gendry))
-    list.add(GotCharacter("The Mountain", R.drawable.gregor))
     list.add(GotCharacter("Sansa Stark", R.drawable.sansa))
     list.add(GotCharacter("Tyrion Lannister", R.drawable.tyrion))
-
+    list.add(GotCharacter("Gendry", R.drawable.gendry))
+    list.add(GotCharacter("The Mountain", R.drawable.gregor))
 
     return list
 

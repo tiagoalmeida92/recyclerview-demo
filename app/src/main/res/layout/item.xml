@@ -9,6 +9,10 @@
     app:cardCornerRadius="6dp"
     app:contentPadding="0dp">
 
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:layout_marginLeft="45dp"-->
+    <!--android:layout_marginRight="45dp"-->
 
     <LinearLayout
         android:layout_width="match_parent"
